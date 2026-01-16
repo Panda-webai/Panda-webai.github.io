@@ -68,7 +68,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 18px 16px;
-      text-align: center;
+      text-align: center; /* ✅ ทำให้ inline-flex ถูกจัดกลาง */
     }
     .tech-title{
       font-weight: 700;
@@ -76,18 +76,18 @@
       margin-bottom: 12px;
     }
 
-    /* ✅ FIX: ใช้รูปเดียวต่อหมวด -> จัดกลางนิ่ง + ลด request */
+    /* ✅ FIX: จัดไอคอนให้อยู่กลางจริง */
     .tech-icons{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      width:100%;
+      display: inline-flex;     /* ✅ หดตามความกว้างไอคอน */
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      /* ✅ สำคัญ: เอา width:100% ออก เพื่อไม่ให้บล็อกเต็มแล้วดูชิดซ้าย */
     }
     .tech-icons img{
       height: 54px;
-      width: auto;
-      display:block;
-      max-width: 100%;
+      display: block;
     }
 
     .tech-row{
@@ -190,12 +190,9 @@
       <div class="tech-card">
         <div class="tech-title">Languages</div>
         <div class="tech-icons">
-          <img
-            src="https://skillicons.dev/icons?i=python,cpp,ts"
-            alt="Python, C++, TypeScript"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="https://skillicons.dev/icons?i=python" alt="Python" />
+          <img src="https://skillicons.dev/icons?i=cpp" alt="C++" />
+          <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
         </div>
       </div>
 
@@ -203,12 +200,11 @@
       <div class="tech-card">
         <div class="tech-title">AI / Machine Learning</div>
         <div class="tech-icons">
-          <img
-            src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,numpy,pandas"
-            alt="PyTorch, TensorFlow, scikit-learn, NumPy, Pandas"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" />
+          <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" />
+          <img src="https://skillicons.dev/icons?i=sklearn" alt="scikit-learn" />
+          <img src="https://skillicons.dev/icons?i=numpy" alt="NumPy" />
+          <img src="https://skillicons.dev/icons?i=pandas" alt="Pandas" />
         </div>
       </div>
 
@@ -216,12 +212,8 @@
       <div class="tech-card">
         <div class="tech-title">Backend & Platform</div>
         <div class="tech-icons">
-          <img
-            src="https://skillicons.dev/icons?i=fastapi,linux"
-            alt="FastAPI, Linux"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI" />
+          <img src="https://skillicons.dev/icons?i=linux" alt="Linux" />
         </div>
         <div class="chip-row">
           <img src="https://img.shields.io/badge/AsyncIO-black?style=for-the-badge" alt="AsyncIO" />
