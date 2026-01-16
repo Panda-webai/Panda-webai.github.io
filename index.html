@@ -54,7 +54,7 @@
     hr{ border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
     .footer{ text-align:center; margin-top: 18px; color: var(--muted); font-size: 14px; }
 
-    /* ✅ NEW: Tech Stack layout (fix “เละ”) */
+    /* ✅ Tech Stack layout */
     .tech-wrap{
       margin-top: 10px;
       display: grid;
@@ -76,7 +76,7 @@
       margin-bottom: 12px;
     }
 
-    /* ✅ FIX: ให้ไอคอนอยู่กลางจริงทุกกรณี */
+    /* ✅ FIX: center icons perfectly by forcing same icon box size */
     .tech-icons{
       display: flex;
       justify-content: center;
@@ -86,12 +86,10 @@
       width: 100%;
     }
     .tech-icons img{
-      display: inline-block; /* เดิมเป็น block */
+      width: 54px;         /* ✅ NEW */
       height: 54px;
-    }
-    .tech-icons img:only-child{
-      margin-left: auto;
-      margin-right: auto;
+      flex: 0 0 54px;      /* ✅ NEW */
+      display: block;      /* ✅ stable box */
     }
 
     .tech-row{
@@ -118,7 +116,7 @@
     }
     .chip-row img{
       height: 34px;
-      display:inline-block;
+      display:block;
     }
 
     /* mobile */
@@ -186,7 +184,7 @@
 
     <hr/>
 
-    <!-- ✅ TECH STACK (fixed) -->
+    <!-- ✅ TECH STACK -->
     <h3 id="tech-stack">🛠 Tech Stack</h3>
 
     <div class="tech-wrap">
