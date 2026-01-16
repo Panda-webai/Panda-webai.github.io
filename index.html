@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Panda-webai | Machine Learning • Real-time Systems</title>
   <meta name="description" content="Panda-webai - Machine Learning and Real-time Systems portfolio." />
-
   <style>
     :root{
       --max: 980px;
@@ -24,12 +23,7 @@
       background:#fff;
     }
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
-
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 24px 16px 40px; }
     a{ color: inherit; text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
@@ -42,6 +36,7 @@
     .two-col{ width:100%; border:0; }
     .two-col td{ vertical-align: top; }
 
+    .muted{ color: var(--muted); }
     blockquote{
       margin: 14px 0 0;
       padding-left: 12px;
@@ -52,260 +47,261 @@
 
     ul{ margin: 10px 0 0 18px; }
     .center{ text-align:center; }
-    .spacer{ height: 12px; }
+    .spacer{ height: 10px; }
 
-    hr{
-      border: 0;
-      border-top: 1px solid var(--line);
-      margin: 28px 0;
-    }
+    .badges img{ margin: 6px 8px; }
 
-    .footer{
-      text-align:center;
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+    hr{ border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+    .footer{ text-align:center; margin-top: 18px; color: var(--muted); font-size: 14px; }
 
-    /* =====================
-       TECH STACK (FIXED)
-    ===================== */
-
+    /* ✅ NEW: Tech Stack layout (fix “เละ”) */
     .tech-wrap{
-      margin-top: 12px;
+      margin-top: 10px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+      align-items: stretch;
     }
-
     .tech-card{
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px 16px;
-
-      /* ⭐ สำคัญ: จัดกลางจริง */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 18px 16px;
       text-align: center;
-
-      min-height: 200px;
     }
-
     .tech-title{
       font-weight: 700;
-      margin-bottom: 14px;
+      letter-spacing: .2px;
+      margin-bottom: 12px;
     }
-
     .tech-icons{
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
-
-      /* ⭐ ทำให้ก้อนไอคอนอยู่กลางทางสายตา */
-      max-width: 260px;
-      margin: 0 auto;
+      gap: 10px;
     }
-
     .tech-icons img{
+      display:block;
       height: 54px;
-      display: block;
     }
-
     .tech-row{
-      margin-top: 18px;
+      margin-top: 16px;
       display:flex;
       justify-content:center;
     }
-
     .tech-wide{
       width: min(720px, 100%);
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 18px 14px;
+      padding: 16px 14px;
       text-align:center;
     }
-
     .chip-row{
       display:flex;
       justify-content:center;
       align-items:center;
       flex-wrap:wrap;
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 10px;
     }
-
     .chip-row img{
       height: 34px;
       display:block;
     }
 
-    /* Mobile */
+    /* mobile */
     @media (max-width: 860px){
-      .two-col, .two-col tr, .two-col td{
-        display:block;
-        width:100% !important;
-      }
-
+      .two-col, .two-col tr, .two-col td{ display:block; width:100% !important; }
       .two-col td{ margin-bottom: 18px; }
 
-      .tech-wrap{
-        grid-template-columns: 1fr;
-      }
+      .tech-wrap{ grid-template-columns: 1fr; }
+      .tech-card, .tech-wide{ text-align:center; }
     }
   </style>
 </head>
 
 <body>
 
-<div align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,24,2&height=300&section=header&text=Panda-webai&fontSize=76&animation=fadeIn&fontAlignY=40&desc=Machine%20Learning%20%7C%20Real-time%20Systems&descSize=22&descAlignY=65"
-    width="100%"
-    alt="Panda-webai header"
-  />
+  <div align="center">
+    <!-- HERO -->
+    <img
+      src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,24,2&height=300&section=header&text=Panda-webai&fontSize=76&animation=fadeIn&fontAlignY=40&desc=Machine%20Learning%20%7C%20Real-time%20Systems&descSize=22&descAlignY=65"
+      width="100%"
+      alt="Panda-webai header"
+    />
 
-  <p class="nav">
-    <a href="#about-me">About Me</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#what-i-build">What I Build</a> •
-    <a href="#projects">Projects</a> •
-    <a href="#contact">Contact</a>
-  </p>
-</div>
-
-<div class="wrap">
-
-<table class="two-col">
-<tr>
-<td width="60%">
-<h3 id="about-me">🐼 About Me</h3>
-
-<p>
-Aspiring <b>Machine Learning Engineer</b> with a background in
-<b>Electronics and Telecommunications</b>.
-Experienced in developing <b>AI-powered systems</b> using
-<b>PyTorch</b> and <b>scikit-learn</b>, with a strong interest in deploying
-models in <b>real-time production environments</b>.
-</p>
-
-<p>
-Hands-on experience integrating <b>AI workflows</b> with real-time backends
-using <b>FastAPI</b> and <b>WebSockets</b>, supported by
-<b>international research experience in Japan</b>.
-</p>
-
-<blockquote>“Keep it clean. Keep it simple. Keep it reproducible.”</blockquote>
-</td>
-
-<td width="40%">
-<h3>🐼 Dev Snapshot</h3>
-<ul>
-<li>🧑‍🔬 <b>Aspiring Machine Learning Engineer</b></li>
-<li>🤖 <b>Deep Learning & Classical ML Systems</b></li>
-<li>🧠 <b>Model Training, Evaluation & Deployment</b></li>
-<li>🌿 <b>Linux-based, Production-ready Mindset</b></li>
-</ul>
-</td>
-</tr>
-</table>
-
-<hr/>
-
-<h3 id="tech-stack">🛠 Tech Stack</h3>
-
-<div class="tech-wrap">
-
-<div class="tech-card">
-  <div class="tech-title">Languages</div>
-  <div class="tech-icons">
-    <img src="https://skillicons.dev/icons?i=python" />
-    <img src="https://skillicons.dev/icons?i=cpp" />
-    <img src="https://skillicons.dev/icons?i=ts" />
+    <!-- NAV -->
+    <p class="nav">
+      <a href="#about-me">About Me</a> •
+      <a href="#tech-stack">Tech Stack</a> •
+      <a href="#what-i-build">What I Build</a> •
+      <a href="#projects">Projects</a> •
+      <a href="#contact">Contact</a>
+    </p>
   </div>
-</div>
 
-<div class="tech-card">
-  <div class="tech-title">AI / Machine Learning</div>
-  <div class="tech-icons">
-    <img src="https://skillicons.dev/icons?i=pytorch" />
-    <img src="https://skillicons.dev/icons?i=tensorflow" />
-    <img src="https://skillicons.dev/icons?i=sklearn" />
-    <img src="https://skillicons.dev/icons?i=numpy" />
-    <img src="https://skillicons.dev/icons?i=pandas" />
-  </div>
-</div>
+  <div class="wrap">
 
-<div class="tech-card">
-  <div class="tech-title">Backend & Platform</div>
-  <div class="tech-icons">
-    <img src="https://skillicons.dev/icons?i=fastapi" />
-    <img src="https://skillicons.dev/icons?i=linux" />
-  </div>
-  <div class="chip-row">
-    <img src="https://img.shields.io/badge/AsyncIO-black?style=for-the-badge" />
-  </div>
-</div>
+    <!-- ABOUT + SNAPSHOT -->
+    <table class="two-col">
+      <tr>
+        <td width="60%">
+          <h3 id="about-me">🐼 About Me</h3>
 
-</div>
+          <p>
+            Aspiring <b>Machine Learning Engineer</b> with a background in <b>Electronics and Telecommunications</b>.<br/>
+            Experienced in developing <b>AI-powered systems</b> using <b>PyTorch</b> and <b>scikit-learn</b>, with a strong interest in deploying machine learning models in <b>real-time production environments</b>.
+          </p>
 
-<div class="tech-row">
-  <div class="tech-wide">
-    <div class="tech-title">Realtime Systems</div>
-    <div class="chip-row">
-      <img src="https://img.shields.io/badge/WebSocket-black?style=for-the-badge" />
-      <img src="https://img.shields.io/badge/Socket.IO-black?style=for-the-badge" />
+          <p>
+            I have hands-on experience integrating <b>AI workflows</b> with real-time backend architectures using <b>FastAPI</b> and <b>WebSockets</b>, supported by <b>international research experience in Japan</b>.
+          </p>
+
+          <blockquote>“Keep it clean. Keep it simple. Keep it reproducible.”</blockquote>
+        </td>
+
+        <td width="40%">
+          <h3>🐼 Dev Snapshot</h3>
+          <ul>
+            <li>🧑‍🔬 <b>Aspiring Machine Learning Engineer</b></li>
+            <li>🤖 <b>Deep Learning & Classical ML Systems</b></li>
+            <li>🧠 <b>Model Training, Evaluation & Deployment</b></li>
+            <li>🌿 <b>Linux-based, Production-ready Mindset</b></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <hr/>
+
+    <!-- ✅ TECH STACK (fixed) -->
+    <h3 id="tech-stack">🛠 Tech Stack</h3>
+
+    <div class="tech-wrap">
+      <!-- Languages -->
+      <div class="tech-card">
+        <div class="tech-title">Languages</div>
+        <div class="tech-icons">
+          <img src="https://skillicons.dev/icons?i=python" alt="Python" />
+          <img src="https://skillicons.dev/icons?i=cpp" alt="C++" />
+          <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
+        </div>
+      </div>
+
+      <!-- AI / ML -->
+      <div class="tech-card">
+        <div class="tech-title">AI / Machine Learning</div>
+        <div class="tech-icons">
+          <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" />
+          <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" />
+          <img src="https://skillicons.dev/icons?i=sklearn" alt="scikit-learn" />
+          <img src="https://skillicons.dev/icons?i=numpy" alt="NumPy" />
+          <img src="https://skillicons.dev/icons?i=pandas" alt="Pandas" />
+        </div>
+      </div>
+
+      <!-- Backend & Platform -->
+      <div class="tech-card">
+        <div class="tech-title">Backend & Platform</div>
+        <div class="tech-icons">
+          <img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI" />
+          <img src="https://skillicons.dev/icons?i=linux" alt="Linux" />
+        </div>
+        <div class="chip-row">
+          <img src="https://img.shields.io/badge/AsyncIO-black?style=for-the-badge" alt="AsyncIO" />
+        </div>
+      </div>
     </div>
+
+    <!-- Realtime -->
+    <div class="tech-row">
+      <div class="tech-wide">
+        <div class="tech-title">Realtime Systems</div>
+        <div class="chip-row">
+          <img src="https://img.shields.io/badge/WebSocket-black?style=for-the-badge" alt="WebSocket" />
+          <img src="https://img.shields.io/badge/Socket.IO-black?style=for-the-badge" alt="Socket.IO" />
+        </div>
+      </div>
+    </div>
+
+    <p class="center muted"><i>AI / ML • Real-time Systems • Linux-based Production</i></p>
+
+    <hr/>
+
+    <!-- WHAT I BUILD -->
+    <h3 id="what-i-build">🧠 What I Build</h3>
+    <ul>
+      <li>🤖 <b>End-to-end ML pipelines</b> — data preprocessing, model training, evaluation, and inference services</li>
+      <li>⚡ <b>AI inference systems</b> — deploying trained models into real-time, event-driven backends</li>
+      <li>🛡️ <b>Production-grade AI services</b> — AsyncIO-based APIs, performance tuning, and Linux deployment</li>
+    </ul>
+
+    <hr/>
+
+    <!-- PROJECTS -->
+    <h3 id="projects">🧩 Projects</h3>
+
+    <h4>🎮 AI-Driven Learning in the Board Game <i>Fafnir</i> (Intern Project)</h4>
+    <p>
+      Designed and developed an <b>AI-assisted strategic board game learning system</b> to enhance <b>computational thinking</b> and <b>foundational AI skills</b>.
+    </p>
+    <p>
+      The system models complete game logic, scoring, and rule enforcement using a <b>Finite State Machine (FSM)</b> and applies <b>game theory concepts</b> such as bidding strategies and risk–reward trade-offs.<br/>
+      A <b>real-time client–server architecture</b> was implemented using <b>Python, FastAPI, Socket.IO, WebSocket, and AsyncIO</b>, supporting both human players and autonomous AI agents.
+    </p>
+    <p>
+      The AI bot utilizes <b>heuristic-based decision-making</b> with real-time game-state evaluation, enabling adaptive and strategic gameplay while maintaining rule consistency.
+    </p>
+
+    <div class="spacer"></div>
+
+    <h4>🌦️ AI-Based Weather Modeling for Accelerated Weathering System</h4>
+    <p>
+      Developed a <b>machine learning–based weather prediction system</b> for controlling an <b>accelerated weathering test machine</b>.
+    </p>
+    <p>
+      Historical meteorological data from <b>2014–2023</b> was preprocessed using <b>time-series modeling</b> and <b>feature engineering</b> to predict temperature, humidity, and rainfall probability.<br/>
+      The trained models achieved an <b>average prediction accuracy of 83.88%</b> and were deployed on an <b>NVIDIA Jetson Nano</b> for embedded AI control.
+    </p>
+    <p>
+      The system integrates AI predictions with hardware control components, enabling multiple weather simulation modes and improving consistency compared to traditional rule-based control systems.
+    </p>
+
+    <hr/>
+
+    <!-- CONTACT -->
+    <h3 id="contact">📫 Contact</h3>
+
+    <div align="center" class="badges">
+      <a href="mailto:yourmail@gmail.com">
+        <img src="https://img.shields.io/badge/Email-black?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+      </a>
+      <a href="https://github.com/Panda-webai">
+        <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN">
+        <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+      </a>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Panda-webai</p>
+    </div>
+
   </div>
-</div>
 
-<p class="center"><i>AI / ML • Real-time Systems • Linux-based Production</i></p>
-
-<hr/>
-
-<h3 id="what-i-build">🧠 What I Build</h3>
-<ul>
-<li>🤖 End-to-end ML pipelines</li>
-<li>⚡ Real-time AI inference systems</li>
-<li>🛡️ Production-grade AI backends on Linux</li>
-</ul>
-
-<hr/>
-
-<h3 id="projects">🧩 Projects</h3>
-
-<h4>🎮 AI-Driven Learning in the Board Game <i>Fafnir</i></h4>
-<p>AI-assisted strategic board game with FSM-based logic and real-time multiplayer backend.</p>
-
-<h4>🌦️ AI-Based Weather Modeling System</h4>
-<p>ML-based weather prediction deployed on NVIDIA Jetson Nano.</p>
-
-<hr/>
-
-<h3 id="contact">📫 Contact</h3>
-<div class="center">
-<a href="mailto:yourmail@gmail.com">Email</a> •
-<a href="https://github.com/Panda-webai">GitHub</a> •
-<a href="https://www.linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
-</div>
-
-<div class="footer">© 2026 Panda-webai</div>
-
-</div>
-
-<div align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,24,0&height=110&section=footer"
-    width="100%"
-  />
-</div>
+  <!-- FOOTER WAVE -->
+  <div align="center">
+    <img
+      src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=2,24,0&height=110&section=footer"
+      width="100%"
+      alt="footer"
+    />
+  </div>
 
 </body>
 </html>
