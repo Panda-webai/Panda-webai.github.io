@@ -76,20 +76,18 @@
       margin-bottom: 12px;
     }
 
-    /* ✅ icons */
+    /* ✅ FIX: ใช้รูปเดียวต่อหมวด -> จัดกลางนิ่ง + ลด request */
     .tech-icons{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      width: 100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width:100%;
     }
     .tech-icons img{
-      width: 54px;
       height: 54px;
-      flex: 0 0 54px;
-      display: block;
+      width: auto;
+      display:block;
+      max-width: 100%;
     }
 
     .tech-row{
@@ -192,9 +190,12 @@
       <div class="tech-card">
         <div class="tech-title">Languages</div>
         <div class="tech-icons">
-          <img src="https://skillicons.dev/icons?i=python" alt="Python" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=cpp" alt="C++" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" loading="lazy" decoding="async" onerror="this.remove()" />
+          <img
+            src="https://skillicons.dev/icons?i=python,cpp,ts"
+            alt="Python, C++, TypeScript"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -202,11 +203,12 @@
       <div class="tech-card">
         <div class="tech-title">AI / Machine Learning</div>
         <div class="tech-icons">
-          <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=tensorflow" alt="TensorFlow" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=sklearn" alt="scikit-learn" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=numpy" alt="NumPy" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=pandas" alt="Pandas" loading="lazy" decoding="async" onerror="this.remove()" />
+          <img
+            src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,numpy,pandas"
+            alt="PyTorch, TensorFlow, scikit-learn, NumPy, Pandas"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -214,11 +216,15 @@
       <div class="tech-card">
         <div class="tech-title">Backend & Platform</div>
         <div class="tech-icons">
-          <img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI" loading="lazy" decoding="async" onerror="this.remove()" />
-          <img src="https://skillicons.dev/icons?i=linux" alt="Linux" loading="lazy" decoding="async" onerror="this.remove()" />
+          <img
+            src="https://skillicons.dev/icons?i=fastapi,linux"
+            alt="FastAPI, Linux"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div class="chip-row">
-          <img src="https://img.shields.io/badge/AsyncIO-black?style=for-the-badge" alt="AsyncIO" loading="lazy" decoding="async" />
+          <img src="https://img.shields.io/badge/AsyncIO-black?style=for-the-badge" alt="AsyncIO" />
         </div>
       </div>
     </div>
@@ -228,8 +234,8 @@
       <div class="tech-wide">
         <div class="tech-title">Realtime Systems</div>
         <div class="chip-row">
-          <img src="https://img.shields.io/badge/WebSocket-black?style=for-the-badge" alt="WebSocket" loading="lazy" decoding="async" />
-          <img src="https://img.shields.io/badge/Socket.IO-black?style=for-the-badge" alt="Socket.IO" loading="lazy" decoding="async" />
+          <img src="https://img.shields.io/badge/WebSocket-black?style=for-the-badge" alt="WebSocket" />
+          <img src="https://img.shields.io/badge/Socket.IO-black?style=for-the-badge" alt="Socket.IO" />
         </div>
       </div>
     </div>
@@ -284,13 +290,13 @@
 
     <div align="center" class="badges">
       <a href="mailto:yourmail@gmail.com">
-        <img src="https://img.shields.io/badge/Email-black?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" loading="lazy" decoding="async" />
+        <img src="https://img.shields.io/badge/Email-black?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
       </a>
       <a href="https://github.com/Panda-webai">
-        <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" loading="lazy" decoding="async" />
+        <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
       </a>
       <a href="https://www.linkedin.com/in/YOUR_LINKEDIN">
-        <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" loading="lazy" decoding="async" />
+        <img src="https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
       </a>
     </div>
 
