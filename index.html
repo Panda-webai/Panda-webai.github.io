@@ -68,7 +68,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 18px 16px;
-      text-align: center; /* ✅ ให้ inline-flex ถูกจัดกลาง */
+      text-align: center;
     }
     .tech-title{
       font-weight: 700;
@@ -76,14 +76,13 @@
       margin-bottom: 12px;
     }
 
-    /* ✅ FIX (สำคัญ): ไอคอนอยู่กลาง + ไม่ล้นออกขวา + เห็นครบ */
     .tech-icons{
-      display: inline-flex;     /* หดตามความกว้างไอคอน แล้วถูกจัดกลางด้วย text-align */
+      display: inline-flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;          /* ให้ขึ้นบรรทัดใหม่ */
+      flex-wrap: wrap;
       gap: 10px;
-      max-width: 100%;          /* กันล้น */
+      max-width: 100%;
     }
     .tech-icons img{
       height: 54px;
@@ -117,7 +116,6 @@
       display:block;
     }
 
-    /* ✅ ADDED: Only for Realtime Systems layout (Socket.IO icon above WebSocket) */
     .socket-stack{
       flex-direction: column;
       gap: 6px;
@@ -126,7 +124,7 @@
       height: 32px;
     }
 
-    /* ✅ ADDED: Education layout only */
+    /* ✅ Education layout only */
     .edu-block{
       background: var(--card);
       border: 1px solid var(--line);
@@ -171,7 +169,7 @@
       margin: 10px 0 0 18px;
     }
 
-    /* ✅ ADDED: Photo Album (collapsed by default, not clutter) */
+    /* ✅ Photo Album (collapsed by default, not clutter) */
     .album-shell{
       background: var(--card);
       border: 1px solid var(--line);
@@ -199,7 +197,7 @@
 
     .album-panel{
       margin-top: 14px;
-      display: none; /* hidden until user opens */
+      display: none;
     }
     .album-panel.is-open{
       display: block;
@@ -217,13 +215,23 @@
       border-radius: 14px;
       overflow: hidden;
       background: #fff;
+
+      /* ✅ FIX: จัดรูปให้อยู่กลาง + ไม่ลอยบนซ้าย */
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f7f7f7;
     }
     .album-view img{
       width: 100%;
       height: auto;
       display:block;
       object-fit: contain;
-      background: #f7f7f7;
+      background: transparent;
+
+      /* ✅ กันรูปสูงเกินกรอบในจอใหญ่ */
+      max-height: 520px;
     }
 
     .album-desc{
@@ -261,6 +269,7 @@
       border: 2px solid transparent;
       cursor: pointer;
       background: #f7f7f7;
+      padding: 0;
     }
     .thumb img{
       width: 100%;
@@ -272,7 +281,6 @@
       border-color: #111;
     }
 
-    /* mobile */
     @media (max-width: 860px){
       .two-col, .two-col tr, .two-col td{ display:block; width:100% !important; }
       .two-col td{ margin-bottom: 18px; }
@@ -284,6 +292,9 @@
 
       .album-grid{
         grid-template-columns: 1fr;
+      }
+      .album-view img{
+        max-height: 420px;
       }
     }
   </style>
@@ -537,20 +548,21 @@
 
   <script>
     // ✅ PHOTO ALBUM DATA (UPDATED: use your real images only)
+    // ✅ FIX: use absolute paths from site root so they never break on GitHub Pages
     const PHOTO_ALBUM = [
       {
         title: "Student Exchange Program – Nanjing",
         text: "Participated in an international student exchange program at Nanjing Vocational College of Information Technology, focusing on engineering fundamentals, technical communication, and cross-cultural collaboration.",
         meta: "Category: Education • Location: Nanjing, China",
-        url: "images/Nanjing_Class.png",
-        thumb: "images/Nanjing_Class.png"
+        url: "/images/Nanjing_Class.png",
+        thumb: "/images/Nanjing_Class.png"
       },
       {
         title: "Academic Exchange & Classroom Activities",
         text: "Classroom-based learning and academic activities during the exchange program, emphasizing information technology, electronics, and applied engineering studies.",
         meta: "Category: Education • Focus: Engineering & IT",
-        url: "images/Nanjing_Class2.png",
-        thumb: "images/Nanjing_Class2.png"
+        url: "/images/Nanjing_Class2.png",
+        thumb: "/images/Nanjing_Class2.png"
       }
     ];
 
@@ -571,7 +583,6 @@
       textEl.textContent = item.text;
       metaEl.textContent = item.meta || "";
 
-      // active border
       const nodes = albumThumbs.querySelectorAll(".thumb");
       nodes.forEach((n,i) => n.classList.toggle("is-active", i === index));
     }
@@ -593,11 +604,9 @@
         albumThumbs.appendChild(btn);
       });
 
-      // default
       if (PHOTO_ALBUM.length > 0) setActive(0);
     }
 
-    // Toggle album open/close
     albumToggle.addEventListener("click", () => {
       const open = albumPanel.classList.toggle("is-open");
       albumToggle.textContent = open ? "Close Album" : "Open Album";
@@ -609,7 +618,6 @@
       }
     });
 
-    // Click thumbnail (event delegation)
     albumThumbs.addEventListener("click", (e) => {
       const t = e.target.closest(".thumb");
       if (!t) return;
