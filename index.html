@@ -171,6 +171,107 @@
       margin: 10px 0 0 18px;
     }
 
+    /* ✅ ADDED: Photo Album (collapsed by default, not clutter) */
+    .album-shell{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 16px;
+    }
+    .album-top{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn{
+      appearance: none;
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .btn:hover{ background: #fafafa; }
+
+    .album-panel{
+      margin-top: 14px;
+      display: none; /* hidden until user opens */
+    }
+    .album-panel.is-open{
+      display: block;
+    }
+
+    .album-grid{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .album-view{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .album-view img{
+      width: 100%;
+      height: auto;
+      display:block;
+      object-fit: contain;
+      background: #f7f7f7;
+    }
+
+    .album-desc{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: #fff;
+    }
+    .album-desc h4{
+      margin: 0 0 8px;
+    }
+    .album-desc p{
+      margin: 0;
+      color: #222;
+      line-height: 1.55;
+    }
+    .album-meta{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .thumbs{
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .thumb{
+      width: 74px;
+      height: 74px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      background: #f7f7f7;
+    }
+    .thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .thumb.is-active{
+      border-color: #111;
+    }
+
     /* mobile */
     @media (max-width: 860px){
       .two-col, .two-col tr, .two-col td{ display:block; width:100% !important; }
@@ -180,6 +281,10 @@
       .tech-card, .tech-wide{ text-align:center; }
 
       .edu-right{ text-align: left; white-space: normal; }
+
+      .album-grid{
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -201,6 +306,7 @@
       <a href="#tech-stack">Tech Stack</a> •
       <a href="#what-i-build">What I Build</a> •
       <a href="#projects">Projects</a> •
+      <a href="#album">Album</a> •
       <a href="#contact">Contact</a>
     </p>
   </div>
@@ -287,8 +393,6 @@
         <div class="tech-icons">
           <img src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" />
           <img src="https://skillicons.dev/icons?i=sklearn" alt="scikit-learn" />
-
-          <!-- ✅ CHANGED: NumPy + Pandas icons that always show -->
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
         </div>
@@ -311,8 +415,6 @@
     <div class="tech-row">
       <div class="tech-wide">
         <div class="tech-title">Realtime Systems</div>
-
-        <!-- ✅ CHANGED: Socket.IO icon above WebSocket -->
         <div class="chip-row socket-stack">
           <img
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"
@@ -372,6 +474,37 @@
 
     <hr/>
 
+    <!-- ✅ PHOTO ALBUM (collapsed, not clutter) -->
+    <h3 id="album">🖼️ Photo Album</h3>
+
+    <div class="album-shell">
+      <div class="album-top">
+        <div class="muted">Click to open the album. Select a photo to see details.</div>
+        <button class="btn" id="albumToggle" type="button" aria-expanded="false">Open Album</button>
+      </div>
+
+      <div class="album-panel" id="albumPanel" aria-hidden="true">
+        <div class="album-grid">
+          <!-- Left: large image -->
+          <div class="album-view">
+            <img id="albumMainImage" src="" alt="Selected photo" />
+          </div>
+
+          <!-- Right: description -->
+          <div class="album-desc">
+            <h4 id="albumTitle">—</h4>
+            <p id="albumText">—</p>
+            <div class="album-meta" id="albumMeta"></div>
+          </div>
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="thumbs" id="albumThumbs"></div>
+      </div>
+    </div>
+
+    <hr/>
+
     <!-- CONTACT -->
     <h3 id="contact">📫 Contact</h3>
 
@@ -401,6 +534,97 @@
       alt="footer"
     />
   </div>
+
+  <script>
+    // ✅ PHOTO ALBUM DATA
+    // เปลี่ยน url เป็นรูปของคุณเองได้เลย (แนะนำใส่ไฟล์ใน repo เช่น /images/xxx.jpg)
+    const PHOTO_ALBUM = [
+      {
+        title: "Intern Project Demo",
+        text: "AI-driven board game system (Fafnir) — real-time client–server gameplay and AI decision logic.",
+        meta: "Category: Project • Tools: Python, FastAPI, Socket.IO",
+        url: "https://picsum.photos/seed/panda1/1200/800",
+        thumb: "https://picsum.photos/seed/panda1/200/200"
+      },
+      {
+        title: "Embedded AI (Jetson Nano)",
+        text: "Weather modeling system deployed on NVIDIA Jetson Nano for embedded AI control and prediction.",
+        meta: "Category: Embedded • Tools: ML, Time-series, Jetson Nano",
+        url: "https://picsum.photos/seed/panda2/1200/800",
+        thumb: "https://picsum.photos/seed/panda2/200/200"
+      },
+      {
+        title: "Competition / Award",
+        text: "Activity highlight — robotics / academic competition participation and awards.",
+        meta: "Category: Activities • Achievement",
+        url: "https://picsum.photos/seed/panda3/1200/800",
+        thumb: "https://picsum.photos/seed/panda3/200/200"
+      }
+    ];
+
+    // Elements
+    const albumToggle = document.getElementById("albumToggle");
+    const albumPanel = document.getElementById("albumPanel");
+    const albumThumbs = document.getElementById("albumThumbs");
+    const mainImg = document.getElementById("albumMainImage");
+    const titleEl = document.getElementById("albumTitle");
+    const textEl = document.getElementById("albumText");
+    const metaEl = document.getElementById("albumMeta");
+
+    function setActive(index){
+      const item = PHOTO_ALBUM[index];
+      mainImg.src = item.url;
+      mainImg.alt = item.title;
+      titleEl.textContent = item.title;
+      textEl.textContent = item.text;
+      metaEl.textContent = item.meta || "";
+
+      // active border
+      const nodes = albumThumbs.querySelectorAll(".thumb");
+      nodes.forEach((n,i) => n.classList.toggle("is-active", i === index));
+    }
+
+    function renderThumbs(){
+      albumThumbs.innerHTML = "";
+      PHOTO_ALBUM.forEach((item, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "thumb";
+        btn.setAttribute("aria-label", "Open photo: " + item.title);
+        btn.dataset.index = String(idx);
+
+        const img = document.createElement("img");
+        img.src = item.thumb || item.url;
+        img.alt = item.title;
+
+        btn.appendChild(img);
+        albumThumbs.appendChild(btn);
+      });
+
+      // default
+      if (PHOTO_ALBUM.length > 0) setActive(0);
+    }
+
+    // Toggle album open/close
+    albumToggle.addEventListener("click", () => {
+      const open = albumPanel.classList.toggle("is-open");
+      albumToggle.textContent = open ? "Close Album" : "Open Album";
+      albumToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      albumPanel.setAttribute("aria-hidden", open ? "false" : "true");
+
+      if (open && albumThumbs.children.length === 0){
+        renderThumbs();
+      }
+    });
+
+    // Click thumbnail (event delegation)
+    albumThumbs.addEventListener("click", (e) => {
+      const t = e.target.closest(".thumb");
+      if (!t) return;
+      const idx = Number(t.dataset.index);
+      if (Number.isFinite(idx)) setActive(idx);
+    });
+  </script>
 
 </body>
 </html>
