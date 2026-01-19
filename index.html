@@ -126,6 +126,51 @@
       height: 32px;
     }
 
+    /* ✅ ADDED: Education layout only */
+    .edu-block{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 16px;
+    }
+    .edu-row{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .edu-left{
+      min-width: 220px;
+      font-weight: 700;
+    }
+    .edu-mid{
+      flex: 1 1 320px;
+      min-width: 260px;
+    }
+    .edu-school{
+      font-weight: 700;
+    }
+    .edu-major{
+      margin-top: 6px;
+      color: var(--muted);
+    }
+    .edu-right{
+      min-width: 160px;
+      text-align: right;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .edu-subtitle{
+      margin-top: 14px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .edu-awards{
+      margin: 10px 0 0 18px;
+    }
+
     /* mobile */
     @media (max-width: 860px){
       .two-col, .two-col tr, .two-col td{ display:block; width:100% !important; }
@@ -133,6 +178,8 @@
 
       .tech-wrap{ grid-template-columns: 1fr; }
       .tech-card, .tech-wide{ text-align:center; }
+
+      .edu-right{ text-align: left; white-space: normal; }
     }
   </style>
 </head>
@@ -150,6 +197,7 @@
     <!-- NAV -->
     <p class="nav">
       <a href="#about-me">About Me</a> •
+      <a href="#education">Education</a> •
       <a href="#tech-stack">Tech Stack</a> •
       <a href="#what-i-build">What I Build</a> •
       <a href="#projects">Projects</a> •
@@ -188,6 +236,34 @@
         </td>
       </tr>
     </table>
+
+    <hr/>
+
+    <!-- ✅ EDUCATION -->
+    <h3 id="education">🎓 Education</h3>
+
+    <div class="edu-block">
+      <div class="edu-row">
+        <div class="edu-left">Bachelor</div>
+
+        <div class="edu-mid">
+          <div class="edu-school">Rajamangala University of Technology Thanyaburi</div>
+          <div class="edu-major">Electronics and Communication Engineering</div>
+        </div>
+
+        <div class="edu-right">Jul 2022 - Apr 2026</div>
+      </div>
+
+      <div class="edu-subtitle">EXTRA-CURRICULAR ACTIVITIES &amp; REWARDS</div>
+      <ul class="edu-awards">
+        <li><b>Student Exchange Scholarship</b> : Nanjing Vocational College of Information Technology</li>
+        <li><b>Chinese Classical Literature Recitation Competition 2024 (Jiangsu)</b> : Student Excellence Award</li>
+        <li><b>Chinese Proficiency Test</b> : HSK 3 (299/300)</li>
+        <li><b>Chinese Proficiency Speaking Test</b> : HSKK Beginner (82/100)</li>
+        <li><b>CRU Robot game Contest</b> : Honorable Mention</li>
+        <li><b>International Cooperative Education Scholarship</b> : National Institute of Technology, Gifu College</li>
+      </ul>
+    </div>
 
     <hr/>
 
@@ -236,7 +312,7 @@
       <div class="tech-wide">
         <div class="tech-title">Realtime Systems</div>
 
-        <!-- Socket.IO icon above WebSocket -->
+        <!-- ✅ CHANGED: Socket.IO icon above WebSocket -->
         <div class="chip-row socket-stack">
           <img
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"
