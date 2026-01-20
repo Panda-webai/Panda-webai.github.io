@@ -1,15 +1,15 @@
 [
     {
-        "name": "ML",
-        "icon": "https://img.icons8.com/dusk/64/artificial-intelligence.png"
+        "name": "PyTorch",
+        "icon": "https://img.icons8.com/arcade/64/pytorch.png"
     },
     {
-        "name": "ExpressJS",
-        "icon": "https://img.icons8.com/fluency/48/000000/node-js.png"
+        "name": "Scikit-learn",
+        "icon": "https://img.icons8.com/pieces/64/learn-more.png"
     },
     {
-        "name": "NodeJS",
-        "icon": "https://img.icons8.com/color/48/000000/nodejs.png"
+        "name": "NumPy",
+        "icon": "https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000"
     },
     {
         "name": "Redux",
