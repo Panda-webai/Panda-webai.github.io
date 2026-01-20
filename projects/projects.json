@@ -1,9 +1,9 @@
 [
   {
-    "name": "NotyStack Android",
-    "desc": "Fully fledged android CRUD app based on different design patterns. Built using Java, XML, SQLite, Firebase, RoomDB, MVVM.",
-    "image": "notystackandroid",
-    "category": "android",
+    "name": "AI-Based Weather Modeling for Weather Accelerator",
+    "desc": "Developed an AI-based weather prediction and simulation model using historical data to automate accelerated weathering control on Jetson Nano.",
+    "image": "weather",
+    "category": "AI",
     "links": {
       "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
       "code": "https://github.com/jigar-sable/notystack-android"
@@ -340,3 +340,4 @@
     }
   }
 ]
+
