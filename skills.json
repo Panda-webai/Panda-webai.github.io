@@ -5,7 +5,7 @@
     },
     {
         "name": "Scikit-learn",
-        "icon": "./assets/skills/scikit-learn.png"
+        "icon": "./assets/images/skills/scikit-learn.png"
     },
     {
         "name": "NumPy",
@@ -17,11 +17,11 @@
     },
     {
         "name": "Joblib",
-        "icon": "./assets/skills/joblib.png"
+        "icon": "./assets/images/skills/joblib.png"
     },
     {
         "name": "Socket.IO",
-        "icon": "./assets/skills/Socket.IO.png"
+        "icon": "./assets/images/skills/Socket.IO.png"
     },
     {
         "name": "MaterialUI",
