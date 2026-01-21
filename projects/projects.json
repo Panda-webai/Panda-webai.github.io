@@ -6,27 +6,24 @@
     "category": "AI",
     "links": {
       "view": "https://github.com/Panda-webai/AI-Based-Weather-Modeling-for-Weather-Accelerator",
-      "code": "https://github.com/jigar-sable/sppu-prep-android"
     }
   },
   {
-    "name": "SPPU Engg Prep",
-    "desc": "All in one SPPU Engineering resources. Built using Java, XML and Firebase.",
-    "image": "sppuprepandroid",
-    "category": "android",
+    "name": "Fafnir",
+    "desc": "AI-assisted board-game learning system integrating FSM, game theory, and autonomous AI agents.",
+    "image": "fafnir",
+    "category": "AI",
     "links": {
-      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
-      "code": "https://github.com/jigar-sable/sppu-prep-android"
+      "view": "https://github.com/Panda-webai",
     }
   },
   {
-    "name": "NewsBox Android",
-    "desc": "Native android app built using Java, XML. Retrofit & Glide dependencies. Provides different category news.",
-    "image": "newsboxandroid",
+    "name": "Fafnir V.2",
+    "desc": "Web-based real-time board game with online multiplayer, hybrid AI (Q-learning + heuristics), and detailed game-state synchronization.",
+    "image": "fafnir2",
     "category": "android",
     "links": {
-      "view": "https://www.linkedin.com/posts/jigar-sable_androiddev-androidstudio-java-activity-6955224473822199808-JT0j",
-      "code": "https://github.com/jigar-sable/newsbox-android"
+      "view": "https://github.com/Panda-webai",
     }
   },
   {
@@ -340,6 +337,7 @@
     }
   }
 ]
+
 
 
 
