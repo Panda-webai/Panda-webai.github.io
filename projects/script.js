@@ -42,6 +42,7 @@ function getProjects() {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
+    if (!projectsContainer) return;
     let projectsHTML = "";
     projects.forEach(project => {
         projectsHTML += `
@@ -88,8 +89,8 @@ function showProjects(projects) {
         //masonry: {
             //columnWidth: 200
         //}
-    });
-
+    //});
+*/
     // filter items on button click
     //$('.button-group').on('click', 'button', function () {
         //$('.button-group').find('.is-checked').removeClass('is-checked');
@@ -135,5 +136,6 @@ document.onkeydown = function (e) {
     }
 
 }
+
 
 
