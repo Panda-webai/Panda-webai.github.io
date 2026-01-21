@@ -90,7 +90,7 @@ function showProjects(projects) {
             //columnWidth: 200
         //}
     //});
-*/
+
     // filter items on button click
     //$('.button-group').on('click', 'button', function () {
         //$('.button-group').find('.is-checked').removeClass('is-checked');
@@ -136,6 +136,7 @@ document.onkeydown = function (e) {
     }
 
 }
+
 
 
 
