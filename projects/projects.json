@@ -3,7 +3,7 @@
     "name": "AI-Based Weather Modeling for Weather Accelerator",
     "desc": "Developed an AI-based weather prediction and simulation model using historical data to automate accelerated weathering control on Jetson Nano.",
     "image": "weather",
-    "category": "AI",
+    "category": "ai",
     "links": {
       "view": "https://github.com/Panda-webai/AI-Based-Weather-Modeling-for-Weather-Accelerator"
     }
@@ -12,7 +12,7 @@
     "name": "Fafnir",
     "desc": "AI-assisted board-game learning system integrating FSM, game theory, and autonomous AI agents.",
     "image": "fafnir",
-    "category": "AI",
+    "category": "ai",
     "links": {
       "view": "https://github.com/Panda-webai"
     }
@@ -21,7 +21,7 @@
     "name": "Fafnir V.2",
     "desc": "Web-based real-time board game with online multiplayer, hybrid AI (Q-learning + heuristics), and detailed game-state synchronization.",
     "image": "fafnir2",
-    "category": "android",
+    "category": "ai",
     "links": {
       "view": "https://github.com/Panda-webai"
     }
@@ -337,6 +337,7 @@
     }
   }
 ]
+
 
 
 
