@@ -5,7 +5,7 @@
     "image": "weather",
     "category": "AI",
     "links": {
-      "view": "https://github.com/Panda-webai/AI-Based-Weather-Modeling-for-Weather-Accelerator",
+      "view": "https://github.com/Panda-webai/AI-Based-Weather-Modeling-for-Weather-Accelerator"
     }
   },
   {
@@ -14,7 +14,7 @@
     "image": "fafnir",
     "category": "AI",
     "links": {
-      "view": "https://github.com/Panda-webai",
+      "view": "https://github.com/Panda-webai"
     }
   },
   {
@@ -23,7 +23,7 @@
     "image": "fafnir2",
     "category": "android",
     "links": {
-      "view": "https://github.com/Panda-webai",
+      "view": "https://github.com/Panda-webai"
     }
   },
   {
@@ -337,6 +337,7 @@
     }
   }
 ]
+
 
 
 
