@@ -2,7 +2,7 @@
   {
     "name": "AI-Based Weather Modeling for Weather Accelerator",
     "desc": "Developed an AI-based weather prediction and simulation model using historical data to automate accelerated weathering control on Jetson Nano.",
-    "image": "assets/images/projects/weather.png",
+    "image": "Weather",
     "category": "AI",
     "links": {
       "view": "https://github.com/Panda-webai/AI-Based-Weather-Modeling-for-Weather-Accelerator",
@@ -340,6 +340,7 @@
     }
   }
 ]
+
 
 
 
