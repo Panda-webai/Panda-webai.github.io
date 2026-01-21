@@ -82,21 +82,21 @@ function showProjects(projects) {
     // srtop.reveal('.work .box', { interval: 200 });
 
     // isotope filter products
-    var $grid = $('.box-container').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
-        masonry: {
-            columnWidth: 200
-        }
+    //var $grid = $('.box-container').isotope({
+        //itemSelector: '.grid-item',
+        //layoutMode: 'fitRows',
+        //masonry: {
+            //columnWidth: 200
+        //}
     });
 
     // filter items on button click
-    $('.button-group').on('click', 'button', function () {
-        $('.button-group').find('.is-checked').removeClass('is-checked');
-        $(this).addClass('is-checked');
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-    });
+    //$('.button-group').on('click', 'button', function () {
+        //$('.button-group').find('.is-checked').removeClass('is-checked');
+        //$(this).addClass('is-checked');
+        //var filterValue = $(this).attr('data-filter');
+        //$grid.isotope({ filter: filterValue });
+    //});
 }
 
 getProjects().then(data => {
@@ -135,4 +135,5 @@ document.onkeydown = function (e) {
     }
 
 }
+
 
