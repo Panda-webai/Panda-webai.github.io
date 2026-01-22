@@ -125,8 +125,9 @@ function showProjects(projects) {
             <i class="fas fa-eye"></i> View
           </a>
         </div>
+       </div>
       </div>
-    </div>`
+    </div>`;
     });
     
     projectsContainer.innerHTML = projectHTML;
@@ -138,7 +139,7 @@ function showProjects(projects) {
     // <!-- tilt js effect ends -->
 
     /* ===== SCROLL REVEAL ANIMATION ===== */
-    const srtop = ScrollReveal({
+    c({
         origin: 'top',
         distance: '80px',
         duration: 1000,
@@ -147,7 +148,7 @@ function showProjects(projects) {
 
     /* SCROLL PROJECTS */
     srtop.reveal('.work .box', { interval: 200 });
-
+    
 }
 
 fetchData().then(data => {
@@ -208,7 +209,7 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
+c({
     origin: 'top',
     distance: '80px',
     duration: 1000,
