@@ -105,9 +105,12 @@ function showSkills(skills) {
 }
 
 function showProjects(projects) {
+    const HOME_PROJECT_COUNT = 3;
     const projectsContainer = document.querySelector("#work .box-container");
+    if (!projectsContainer) return;
     let projectHTML = "";
-    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+    const picked = projects.filter(project => project.category != "android").sort(() => Math.random() - 0.5).slice(0, HOME_PROJECT_COUNT);
+    picked.forEach(project => {
         projectHTML += `
         <div class="box tilt">
       <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
@@ -125,6 +128,7 @@ function showProjects(projects) {
       </div>
     </div>`
     });
+    
     projectsContainer.innerHTML = projectHTML;
 
     // <!-- tilt js effect starts -->
@@ -155,9 +159,9 @@ fetchData("projects").then(data => {
 });
 
 // <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
+//VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    //max: 15,
+//});
 // <!-- tilt js effect ends -->
 
 
