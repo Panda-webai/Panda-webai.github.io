@@ -47,7 +47,7 @@ function showProjects(projects) {
     projects.forEach(project => {
         projectsHTML += `
         <div class="grid-item ${project.category}">
-        <div class="box tilt" style="width: 380px; margin: 1rem">
+        <div class="box tilt">
       <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
@@ -64,6 +64,17 @@ function showProjects(projects) {
     </div>`
     });
     projectsContainer.innerHTML = projectsHTML;
+
+    var $grid = $('.work .box-container').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+    });
+    $('#filters').on('click', 'button', function () {
+        $('#filters').find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+    });
 
     // vanilla tilt.js
     // VanillaTilt.init(document.querySelectorAll(".tilt"), {
@@ -136,6 +147,7 @@ document.onkeydown = function (e) {
     }
 
 }
+
 
 
 
