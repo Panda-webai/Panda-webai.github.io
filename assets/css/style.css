@@ -653,9 +653,10 @@ header .navbar ul li a:hover {
 }
 .work .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
-  margin: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
 .work .box-container .box {
   border-radius: 0.5rem;
