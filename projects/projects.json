@@ -34,7 +34,7 @@
     "links": {
       "view": "https://github.com/Panda-webai"
     }
-  }
+  },
     {
     "name": "HSK 3",
     "desc": "Successfully passed the Chinese Proficiency Test (HSK) Level 3",
@@ -43,7 +43,7 @@
     "links": {
       "view": "https://github.com/Panda-webai"
     }
-  }
+  },
   {
     "name": "HSKK Beginner",
     "desc": "Successfully passed the Chinese Proficiency Speaking Test (HSKK) Beginner",
@@ -54,6 +54,7 @@
     }
   }
 ]
+
 
 
 
