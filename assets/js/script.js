@@ -105,7 +105,7 @@ function showSkills(skills) {
 }
 
 function showProjects(projects) {
-    const HOME_PROJECT_COUNT = 8;
+    const HOME_PROJECT_COUNT = 6;
     const projectsContainer = document.querySelector("#work .box-container");
     if (!projectsContainer) return;
     let projectHTML = "";
