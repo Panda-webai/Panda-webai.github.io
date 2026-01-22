@@ -26,8 +26,17 @@
       "view": "https://github.com/Panda-webai"
     }
   },
-  }
+  {
+    "name": "Room volume measurement device using ultrasonic sensors",
+    "desc": "A portable device capable of measuring room volume using ultrasonic sensors integrated with an Arduino board.",
+    "image": "ultrasonic",
+    "category": "product",
+    "links": {
+      "view": "https://github.com/Panda-webai"
+    }
+  },
 ]
+
 
 
 
